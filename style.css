@@ -142,7 +142,7 @@ p{
 
 .outer
 {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
     padding: 0.625rem;
     width: 100%;
     position: relative;
@@ -151,7 +151,8 @@ p{
     & aside
     {
         position: fixed;
-        width: 13rem;
+        width: 12rem;
+        border: 3px solid var(--second-bg);
         padding: 0.5rem;
         background-color: var(--second-bg);
         border-radius: 6px;
@@ -188,7 +189,7 @@ p{
 
         & h2 {
             margin-bottom: 0.85rem;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             padding-left: 0.5rem;
             color: var(--soft-text);
         }
