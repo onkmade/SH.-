@@ -1,0 +1,131 @@
+*,
+::after,
+::before{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+:root{
+    --primary-bg: #F3F3F3;
+    --second-bg:#dfdfdf;
+
+    /* text color */
+    --text-primary: #393939;
+    /* Icons */
+    --icon-color: #666 ;
+}
+
+body, html{
+    background-color: var(--primary-bg);
+    font-family: "Inter" ;
+    font-size: 1.25rem;
+
+}
+
+header{
+    background-color: var(--second-bg);
+    width: 100%;
+
+    & .nav-list{
+        padding: 0.5rem 1rem;
+        max-width: 90%;
+        margin-inline: auto;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+
+    & .logo-sh{
+        font-size: 1.25rem;
+        font-weight: 1000;
+        letter-spacing: 0.2rem;
+    }
+
+    & .inner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 80%;
+        
+        & .search-bar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            width: 50%;
+            
+            & .input-group{
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                width: 100%;
+            }
+            
+            & input{
+                outline: none;
+                border: none;
+                background: none; 
+                
+                
+                &::placeholder{
+                    color: lightgray;
+                }
+            }
+
+            & nav > ul {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+
+                & li{
+                    display: grid;
+                    place-content: center;
+                }
+            }
+        }
+        
+        & button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            outline: none;
+            border: none;
+            border-radius: 6px;
+            gap: 0.5rem;
+            background-color: white;
+            padding: 0.5rem 1rem;
+        }
+    }
+    
+}
+header > nav > nav > ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    & li{
+        display: grid;
+        place-content: center;
+        padding: 0.5rem 0.65rem;      
+        border-radius: 6px;
+        background-color: white;
+    }
+}
+
+svg{
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    stroke: var(--icon-color);
+}
+
+p{
+    color: var(--text-primary);
+}
