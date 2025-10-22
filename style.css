@@ -241,3 +241,8 @@ p{
 h2.categories{
     margin-top: 0.85rem;
 }
+
+main{
+    position: absolute;
+    left: 280px;
+}
