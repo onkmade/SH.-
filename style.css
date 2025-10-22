@@ -61,15 +61,18 @@ header{
             & .input-group{
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 gap: 0.5rem;
                 width: 100%;
             }
             
             & input{
+                font-size: 0.75rem;
+                font-weight: lighter;
+                width: 100%;
                 outline: none;
                 border: none;
-                background: none; 
-                
+                background: none;                
                 
                 &::placeholder{
                     color: lightgray;
@@ -81,6 +84,7 @@ header{
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                margin-left: 0.5rem;
                 gap: 0.5rem;
 
                 & li{
