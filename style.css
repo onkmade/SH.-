@@ -28,6 +28,18 @@ a{
     text-decoration: none;
     color: inherit;
 }
+
+button{
+    outline: transparent;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+h6{
+    font-weight: 350;
+}
+
 /* ===== END ===== */
 
 .buddle{
@@ -258,9 +270,20 @@ footer.setting a:hover{
     flex-grow: 1;
 }
 
+.main-wrap .sub-tags{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.view-more{
+    color: rgb(0, 128, 255);
+}
 main.content{
     flex-grow: 1;
     margin: 0.5rem 0;
+    display: grid;
+    gap: 1rem;
 }
 
 footer.web-footer{
@@ -278,15 +301,67 @@ main img{
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center;
+    border-radius: 3px;
 }
 
 .items-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
     gap: 1rem;
 }
 
 .items-grid article{
-    width: 150px;
+    /* width: 200px; */
+    position: relative;
+    top: 0;
+    left: 0;
     background-color: white;
+    display: grid;
+    gap: 0.5rem;
+    line-height: 1.6;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.items-grid .card-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+figcaption{
+    position:absolute;
+    margin: 1rem;
+    right: 0;
+}
+
+figcaption svg{
+    stroke: white;
+}
+
+figcaption button{
+    background: rgba(255 255 255 / 1%);
+    outline: transparent;
+    padding: 0.25rem;
+    border-radius: 2px;
+    border: none;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+figcaption button:hover{
+    transform: scale(1.1);
+}
+
+.card-btn button{
+    background-color: rgb(230, 230, 230);
+    padding: 0.25rem 0.45rem;
+    border-radius: 3px;
+}
+
+.price-tag{
+    background-color:rgb(230, 230, 230);
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.25rem;
 }
