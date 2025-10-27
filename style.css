@@ -6,8 +6,8 @@
     padding: 0;
 }
 
-html, body{
-    font-family: "Inter", System-ui;
+body{
+    font-family: "Inter";
     background-color: #F0F2F5;
     color: #1f2937;
 }
@@ -17,4 +17,97 @@ html, body{
     flex-direction: column;
     gap: 1rem;
 }
+
+header{
+    padding: 0.65rem;
+    background-color: rgb(202, 202, 202);
+}
+
+header .h-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    /* background-color: yellowgreen; */
+}
+
+header .header-left .logo-sh{
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    color: #1f2937;
+}
+
+header .header-center{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.header-center button{
+    outline: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: #777777;
+    font-size: 0.95rem;
+    border-radius: 6px;
+}
+
+/* Header - Search */
+header .hs-wrap{
+    background-color: white;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.hs-wrap input{
+    outline: transparent;
+    border: none;
+    background: transparent;
+    width: 100%;
+    color: #383838;
+}
+
+
+header .header-right{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header-right button{
+    outline: transparent;
+    border: none;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+/* SVG Coloring and setting */
+/* <a> - settings */
+svg{
+    stroke: #777777;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: grid;
+    place-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== END ===== */
 
