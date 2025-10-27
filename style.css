@@ -142,9 +142,81 @@ header .header-right{
     margin: 0.5rem;
     top: 3.55rem;
     left: 0;
-    background-color:rgb(202, 202, 202);
+    background-color:rgb(219, 219, 219);
     width: 250px;
     height: calc(100svh - 3.55rem - 1rem);
-    border: 3px solid rgb(202, 202, 202);
+    border: 3px solid rgb(219, 219, 219);
     border-radius: 0.35rem;
 }
+
+.sidebar .boxes{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(538.4px - 26px);
+    padding-inline:0.5rem;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.sidebar .box{
+    display:grid;
+    gap:0.5rem;
+    margin-top: 0.5rem;
+}
+
+.sidebar nav{
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar h3{
+    color: #ffffff;
+}
+
+.sidebar nav a{
+    display: block;
+    padding: 0.35rem 0.5rem;
+    border-radius: 3px;
+}
+
+.sidebar nav a:hover{
+    background-color: #777777;
+    color: white;
+}
+
+.boxes::-webkit-scrollbar{
+    width: 4px;
+}
+
+.boxes::-webkit-scrollbar-thumb{
+    background-color: #828282;
+    border-radius: 50px;   
+}
+
+footer.setting{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height:fit-content;
+    border-radius: 1px;
+    /* border-top: 1px solid white; */
+    background-color: rgb(219, 219, 219);
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+footer.setting a{
+    display:flex;
+    gap: 0.5rem;
+    padding: 0.65rem 0.65rem;
+    border-radius: 3px;
+    background-color: white;
+} 
