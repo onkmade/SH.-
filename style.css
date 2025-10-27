@@ -10,6 +10,7 @@ body{
     font-family: "Inter";
     background-color: #F0F2F5;
     color: #1f2937;
+    min-height: 100vh;
 }
 
 /* SVG Coloring and setting */
@@ -243,4 +244,49 @@ footer.setting a{
 footer.setting a:hover{
     background-color: #232323;
     color: white;
+}
+
+/* MAIN CONTENT AREA */
+.main-wrap{
+    width: calc(100vw - 290px);
+    position: relative;
+    top: 3.55rem;
+    left: 266px;
+    height: 100%;
+    margin-top: 0.5rem;
+    background: transparent;
+    flex-grow: 1;
+}
+
+main.content{
+    flex-grow: 1;
+    margin: 0.5rem 0;
+}
+
+footer.web-footer{
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #232323;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+main img{
+    display: block;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.items-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.items-grid article{
+    width: 150px;
+    background-color: white;
 }
