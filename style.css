@@ -12,28 +12,51 @@ body{
     color: #1f2937;
 }
 
+/* SVG Coloring and setting */
+/* <a> - settings */
+svg{
+    stroke: #777777;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: grid;
+    place-content: center;
+    flex-shrink: 0; 
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* ===== END ===== */
+
+
+
+/* HEADER STRUCTURE */
+header{
+    padding: 0.65rem;
+    background-color: rgb(202, 202, 202);
+}
+
 .buddle{
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-header{
-    padding: 0.65rem;
-    background-color: rgb(202, 202, 202);
-}
 
 header .h-wrap{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10%;
+    padding: 0 5%;
+    gap: 1rem;
+    flex-wrap: nowrap; /* Prevent unnecessary wrapping on the main header row*/
     /* background-color: yellowgreen; */
 }
 
 header .header-left .logo-sh{
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 700;
     letter-spacing: 0.1rem;
     color: #1f2937;
 }
@@ -43,8 +66,8 @@ header .header-center{
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    flex-wrap: wrap;
-    flex-grow: 1;
+    flex-grow: 1; /* Allow the center section to claim the maximum sapce*/
+    min-width: 0;
 }
 
 .header-center button{
@@ -53,23 +76,28 @@ header .header-center{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.35rem;
-    padding: 0.5rem 1rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
     background-color: white;
     color: #777777;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     border-radius: 6px;
 }
 
-/* Header - Search */
+/* Header - Search Container */
 header .hs-wrap{
     background-color: white;
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     padding: 0.5rem;
     border-radius: 6px;
     width: 100%;
-    max-width: 400px;
+    flex-grow: 1;
+    min-width: 200px;
+    max-width: 450px;
 }
 
 .hs-wrap input{
@@ -78,6 +106,7 @@ header .hs-wrap{
     background: transparent;
     width: 100%;
     color: #383838;
+    font-size: 0.875rem;
 }
 
 
@@ -94,20 +123,4 @@ header .header-right{
     border-radius: 6px;
 }
 
-/* SVG Coloring and setting */
-/* <a> - settings */
-svg{
-    stroke: #777777;
-    width: 1.25rem;
-    height: 1.25rem;
-    display: grid;
-    place-content: center;
-}
-
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ===== END ===== */
 
