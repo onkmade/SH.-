@@ -64,3 +64,24 @@ section{
     display: grid;
     gap: 1.2rem;
 }
+
+.auth-wrap header{
+    text-align: center;
+    line-height: 1.6;
+}
+
+.auth-wrap h4{
+    font-size: 1.5rem;
+    color: #484848;
+}
+
+.auth-wrap h5{
+    font-weight: 500;
+    color: #6c6c6c;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+}
+
