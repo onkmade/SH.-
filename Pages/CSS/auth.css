@@ -16,6 +16,9 @@ body{
     background-color: #F0F2F5;
     color: #1f2937;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* SVG Coloring and setting */
@@ -30,8 +33,7 @@ svg{
 }
 
 a{
-    text-decoration: none;
-    color: inherit;
+    color: rgb(26, 107, 173);
 }
 
 button{
@@ -46,3 +48,19 @@ h6{
 }
 
 /* COding begins from here */
+.auth-wrap{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+    background-color: yellowgreen;
+    padding: 0.5rem;
+}
+
+section{
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: grid;
+    gap: 1.2rem;
+}
