@@ -108,7 +108,7 @@ input{
     border: none;
     outline: transparent;
     background: transparent;
-    padding: 0.5rem; 
+    padding: 0.65rem 0.5rem; 
     border: 1px solid #a4a4a4;
     border-radius: 6px;
 
@@ -142,7 +142,7 @@ form .grp{
     color: #484848;
 }
 
-button.Sign-in{
+button.Sign-up{
     background-color: rgb(0, 128, 255);
     border: 2px solid rgb(79, 167, 255);
     padding: 0.65rem 1.2rem;
@@ -159,7 +159,7 @@ button.Sign-in{
     }
 }
 
-button.Sign-in:hover{
+button.Sign-up:hover{
     transform: translateY(-1.5px);
     box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
 }
@@ -217,7 +217,7 @@ p.choice{
     font-size: 0.75rem;
     background: #CFCFCF;
     background: linear-gradient(to top right, #CFCFCF 28%, #FF6060 100%);
-    -webkit-background-clip: text;
+    background-clip: text; 
     -webkit-text-fill-color: transparent;
 }
 
