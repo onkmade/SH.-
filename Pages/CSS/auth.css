@@ -50,7 +50,7 @@ h6{
 /* COding begins from here */
 .auth-wrap{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 400px);
     grid-template-rows: repeat(1, 1fr);
     gap: 8px;
     background-color: yellowgreen;
@@ -88,21 +88,26 @@ form{
     display:flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 input{
     border: none;
     outline: transparent;
     background: transparent;
-    background-color: var(--background);
     padding: 0.5rem; 
-    border: 1px solid var(--primary-bg) ;
+    border: 1px solid #a4a4a4;
     border-radius: 6px;
+
+    &::placeholder{
+        font-size: 0.85rem;
+        color: rgb(159, 159, 159);
+    }
 }
 
 label{
-    color: #484848;
-    font-size: 0.85rem;
+    color: #454545;
+    font-size: 0.75rem;
 }
 
 form .grp{
