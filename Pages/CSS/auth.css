@@ -13,7 +13,7 @@
 
 body{
     font-family: "Inter";
-    background-color: #F0F2F5;
+    /* background-color: #F0F2F5; */
     color: #1f2937;
     min-height: 100vh;
     display: flex;
@@ -53,8 +53,10 @@ h6{
     grid-template-columns: repeat(2, 400px);
     grid-template-rows: repeat(1, 1fr);
     gap: 8px;
-    background-color: yellowgreen;
+    background-color: var(--primary-bg);
+    border-radius: 0.85rem;
     padding: 0.5rem;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
 section{
@@ -71,7 +73,7 @@ section{
 
 .auth-wrap header{
     text-align: center;
-    line-height: 2;
+    line-height: 1.6;
 }
 
 .auth-wrap h4{
@@ -80,8 +82,8 @@ section{
 }
 
 .auth-wrap h5{
-    font-weight: 500;
-    color: #6c6c6c;
+    font-weight: 400;
+    color: #939393;
 }
 
 form{
@@ -105,9 +107,14 @@ input{
     }
 }
 
+input:focus-visible{
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+    border: 2px solid steelblue;
+}
+
 label{
     color: #454545;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
 }
 
 form .grp{
@@ -115,4 +122,44 @@ form .grp{
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
+}
+
+.policy{
+    display: flex;
+    gap: 0.45rem;
+    font-size: 0.85rem;
+    color: #484848;
+}
+
+button.Sign-in{
+    background-color: steelblue;
+    border: 2px solid rgb(88, 148, 198);
+    padding: 0.65rem 1.2rem;
+    color: white;
+    font-size: 1rem;
+    width: fit-content;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+
+    & a{
+        text-decoration: none;
+        color: inherit;
+        font-size: large;
+    }
+}
+
+button.Sign-in:hover{
+    transform: translateY(-1.5px);
+    box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
+}
+
+.btn{
+    display: grid;
+    place-content: center;
+    margin-top: 1rem;
+}
+
+p.choice{
+    text-align: center;
+    font-size: 0.85rem;
 }
