@@ -1,3 +1,8 @@
+:root{
+    --background:#F0F2F5;
+    --white-bg:white;
+    --primary-bg:#e1e1e1;
+}
 *,
 *::after,
 *::before{
@@ -56,7 +61,7 @@ header{
     display: grid;
     align-items: center;
     padding: 0.65rem;
-    background-color: rgb(219, 219, 219);
+    background-color: var(--primary-bg);
     border-bottom: 0.5px solid white;
     z-index: 100;
     stroke: #777777;
@@ -98,7 +103,7 @@ header .header-center{
     white-space: nowrap;
     gap: 0.5rem;
     padding: 0.5rem 0.75rem;
-    background-color: white;
+    background-color:var(--white-bg);
     color: #777777;
     font-size: 0.875rem;
     border-radius: 6px;
@@ -112,7 +117,7 @@ header .header-center{
 
 /* Header - Search Container */
 header .hs-wrap{
-    background-color: white;
+    background-color:var(--white-bg);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -149,7 +154,7 @@ header .header-right{
 .header-right button{
     outline: transparent;
     border: none;
-    background-color: white;
+    background-color: var(--white-bg);
     padding: 0.5rem;
     border-radius: 6px;
     transition: transform 0.3s ease;
@@ -168,10 +173,10 @@ header .header-right{
     margin: 0.5rem;
     top: 3.55rem;
     left: 0;
-    background-color:rgb(219, 219, 219);
+    background-color:var(--primary-bg);
     width: 250px;
     height: calc(100svh - 3.55rem - 1rem);
-    border: 3px solid rgb(219, 219, 219);
+    border: 3px solid var(--primary-bg);
     border-radius: 0.35rem;
 }
 
