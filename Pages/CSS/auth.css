@@ -227,3 +227,12 @@ footer{
         font-size: 0.75rem;
     }
 }
+
+.s-right{
+    display: none;
+    opacity: 01;
+}
+
+.s-sign-in{
+    display: none;
+}
