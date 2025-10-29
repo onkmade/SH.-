@@ -228,7 +228,12 @@ footer{
     }
 }
 
-.s-right{
-    display: none;
-    opacity: 01;
+.s-right {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.s-sign-in {
+    display: none; 
+    transition: opacity 0.3s ease;
 }
