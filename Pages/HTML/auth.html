@@ -13,8 +13,8 @@
     <div class="auth-wrap">
         <!-- Style Section -->
         <section class="s-left">
-            <header>
-                <a href="">SH.</a>
+            <header class="p-4">
+                <a href="#">SH.</a>
             </header>
             <main class="text-area">
                 <h3 class="heading">Join Secondhand</h3>
@@ -26,59 +26,63 @@
             </footer>
         </section>
 
-        <!-- Login things -->
+        <!-- Sign-Up Form -->
         <section class="s-right" id="new-account">
             <div class="right-wrap">
                 <header class="header-top">
                     <h4>Create Your Account</h4>
-                    <h5>ReMarket -  Give Items a Second Life.</h5>
+                    <h5>ReMarket - Give Items a Second Life.</h5>
                 </header>
-                <form action="">
+                <form onsubmit="return false;">
                     <div class="email grp">
-                        <label for="Email">Email:</label>
-                        <input type="email" name="" id="" placeholder="Enter your Email">
+                        <label for="email-up">Email:</label>
+                        <input type="email" id="email-up" placeholder="Enter your Email">
                     </div>
                     <div class="pass grp">
-                        <label for="Password">Password:</label>
-                        <input type="password" name="" id="" placeholder="Enter your Password">
+                        <label for="password-up">Password:</label>
+                        <input type="password" id="password-up" placeholder="Enter your Password">
                     </div>
                 </form>
                 <div class="policy">
-                    <input type="checkbox" name="" id="">
-                    <p>I agree to the <a href="">terms & Privacy Policy</a></p>
+                    <input type="checkbox" id="policy-up">
+                    <p>I agree to the <a href="#">terms & Privacy Policy</a></p>
                 </div>
                 <div class="btn">
-                    <button id="" class="Sign-up">Sign-Up</button>
+                    <button class="Sign-up">Sign-Up</button>
                 </div>
-                <p class="choice">Already have an account? <a href="" id="sign-in-btn">Sign-in.</a></p>
+                <p class="choice">Already have an account? 
+                    <a href="#" id="sign-in-btn">Sign-in.</a>
+                </p>
             </div>
         </section>
 
-        <!-- Sign-in things -->
+        <!-- Sign-In Form (Initially Hidden) -->
         <section class="s-sign-in" id="login-account">
             <div class="right-wrap">
                 <header class="header-top">
                     <h4>Welcome Back</h4>
-                    <h5>ReMarket -  Give Items a Second Life.</h5>
+                    <h5>ReMarket - Give Items a Second Life.</h5>
                 </header>
-                <form action="">
+                <form onsubmit="return false;">
                     <div class="email grp">
-                        <label for="Email">Email:</label>
-                        <input type="email" name="" id="" placeholder="Enter your Email">
+                        <label for="email-in">Email:</label>
+                        <input type="email" id="email-in" placeholder="Enter your Email">
                     </div>
                     <div class="pass grp">
-                        <label for="Password">Password:</label>
-                        <input type="password" name="" id="" placeholder="Enter your Password">
+                        <label for="password-in">Password:</label>
+                        <input type="password" id="password-in" placeholder="Enter your Password">
                     </div>
                 </form>
                 <div class="policy">
-                    <input type="checkbox" name="" id="">
-                    <p>I agree to the <a href="">terms & Privacy Policy</a></p>
+                    <input type="checkbox" id="policy-in">
+                    <p>I agree to the <a href="#">terms & Privacy Policy</a></p>
                 </div>
                 <div class="btn">
-                    <button id="" class="Sign-up">Sign-In</button>
+                    <button class="Sign-up">Sign-In</button>
                 </div>
-                <p class="choice">Don't have an account <a href="" id="sign-up-btn">Sign-up</a></p>
+                <p class="choice">Don't have an account 
+                    <a href="#" id="sign-up-btn">Sign-up</a>
+                </p>
             </div>
         </section>
     </div>
