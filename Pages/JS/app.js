@@ -53,4 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         signInSection.style.display = 'none';
         signInSection.style.opacity = '0';
     }
+
+    // Main Content Switching 
 });
+
