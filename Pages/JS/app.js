@@ -54,6 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         signInSection.style.opacity = '0';
     }
 
-    // Main Content Switching 
+    // Main Content Switching
 });
 
