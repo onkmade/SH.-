@@ -370,3 +370,12 @@ figcaption button:hover{
     padding: 0.25rem 0.65rem;
     border-radius: 0.25rem;
 }
+
+button.svg-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: large;
+    border-radius: 6px;
+}
