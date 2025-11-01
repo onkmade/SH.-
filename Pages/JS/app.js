@@ -68,22 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300); // Wait for the opacity transition (0.3s) to finish before setting display:none
     };
 
-    // 3. Attach event listeners (only if elements exist)
-    // When 'Sign-in' link is clicked (inside Sign-Up form)
     if (signInBtn) {
         signInBtn.addEventListener('click', (e) => {
             toggleForms(e, signInSection, signUpSection);
         });
     }
 
-    // When 'Sign-up' link is clicked (inside Sign-In form)
     if (signUpBtn) {
         signUpBtn.addEventListener('click', (e) => {
             toggleForms(e, signUpSection, signInSection);
         });
     }
     
-    // Initial setup: ensure Sign-Up is visible and Sign-In is hidden (only if they exist)
     if (signUpSection && signInSection) {
         signUpSection.style.display = 'block';
         signUpSection.style.opacity = '1';
@@ -91,14 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
         signInSection.style.opacity = '0';
     }
 
-    // Initialize content switching - make sure Feed is shown by default
     showContent('feed');
     
-    // Add click event listeners to all navigation links as backup
     const navLinks = document.querySelectorAll('.nav-links');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Get the section ID from the link's ID (e.g., 'link-feed' -> 'feed')
             const linkId = this.id;
             if (linkId.startsWith('link-')) {
                 e.preventDefault();
