@@ -166,7 +166,7 @@
         <div id="main-wrap" class="main-wrap">
 
             <!-- List 1. FEED Section -->
-            <main class="content-section active-content">
+            <main id="feed" class="content-section active-content">
                 <div class="sub-tags">
                     <h3>Featured Goods</h3>
                     <a class="view-more" href="#">view more</a>
@@ -249,7 +249,158 @@
                         </article>
                     </div>
                 </section>
-            </main> 
+            </main>
+
+            <!-- List 2. CATEGORIES Section -->
+            <main id="categories" class="content-section">
+                <h3>Browse Categories</h3>
+                <p>Explore items by category to find exactly what you're looking for.</p>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <h4>Electronics</h4>
+                        <p>Phones, laptops, cameras, and more tech gadgets.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Furniture</h4>
+                        <p>Quality furniture for every room in your home.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Vehicles</h4>
+                        <p>Cars, motorcycles, bikes, and vehicle accessories.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Apparel & Accessories</h4>
+                        <p>Fashion items, clothing, watches, and jewelry.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Home & Garden</h4>
+                        <p>Tools, decor, and everything for your home.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Sporting</h4>
+                        <p>Sports equipment, outdoor gear, and fitness items.</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- List 3. SELL Section -->
+            <main id="sell" class="content-section">
+                <h3>List an Item (Sell)</h3>
+                <p>Create a listing to sell your pre-owned items quickly and easily.</p>
+                <form class="sell-form">
+                    <label for="item-title">Item Title</label>
+                    <input type="text" id="item-title" placeholder="Enter item name" required>
+                    
+                    <label for="item-category">Category</label>
+                    <select id="item-category" required>
+                        <option value="">Select a category</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="vehicles">Vehicles</option>
+                        <option value="apparel">Apparel & Accessories</option>
+                        <option value="home">Home & Garden</option>
+                        <option value="sporting">Sporting</option>
+                    </select>
+                    
+                    <label for="item-price">Price ($)</label>
+                    <input type="number" id="item-price" placeholder="0.00" step="0.01" required>
+                    
+                    <label for="item-description">Description</label>
+                    <textarea id="item-description" rows="5" placeholder="Describe your item..." required></textarea>
+                    
+                    <button type="submit" class="submit-btn">List Item</button>
+                </form>
+            </main>
+
+            <!-- List 4. INBOX Section -->
+            <main id="inbox" class="content-section">
+                <h3>Inbox</h3>
+                <p>View and manage your messages from buyers and sellers.</p>
+                <div class="inbox-list">
+                    <div class="message-item">
+                        <strong>John Doe</strong>
+                        <p>Hi, is the laptop still available?</p>
+                        <span class="message-time">2 hours ago</span>
+                    </div>
+                    <div class="message-item">
+                        <strong>Sarah Smith</strong>
+                        <p>Can you provide more photos of the furniture?</p>
+                        <span class="message-time">5 hours ago</span>
+                    </div>
+                    <div class="message-item">
+                        <strong>Mike Johnson</strong>
+                        <p>I'd like to purchase the watch. When can we meet?</p>
+                        <span class="message-time">1 day ago</span>
+                    </div>
+                </div>
+            </main>
+
+            <!-- List 5. WATCHLIST Section -->
+            <main id="watchlist" class="content-section">
+                <h3>My Watchlist</h3>
+                <p>Keep track of items you're interested in purchasing.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/item_2.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Digital Home Monitor</h4>
+                                <h6>Electronics</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 11.5</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- List 6. LOCAL Section -->
+            <main id="local" class="content-section">
+                <h3>Local Listings</h3>
+                <p>Browse items available near you for easy pickup.</p>
+                <div class="local-filter">
+                    <label for="distance">Within:</label>
+                    <select id="distance">
+                        <option value="5">5 miles</option>
+                        <option value="10">10 miles</option>
+                        <option value="25">25 miles</option>
+                        <option value="50">50 miles</option>
+                    </select>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/item_3.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"/>
+                                        <path d="M15 15h6"/><path d="M18 12v6"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Sunrise Clock</h4>
+                                <h6>Electronics</h6>
+                                <span class="location-badge">2.3 miles away</span>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 11.5</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
             
             <!-- FOOTER AREA -->
             <footer class="web-footer">
@@ -257,5 +408,7 @@
             </footer>
         </div>
     </div>
+    <script src="/Pages/JS/app.js"></script>
+    <script src="/Pages/JS/auth.js"></script>
 </body>
 </html>
