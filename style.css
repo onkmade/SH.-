@@ -345,7 +345,7 @@ main img{
 }
 
 .items-grid article{
-    /* width: 200px; */
+    width: 250px;
     position: relative;
     top: 0;
     left: 0;
