@@ -123,24 +123,24 @@
                     <div class="down box">
                         <h4>Categories</h4>
                         <nav>
-                            <a class="nav-links" href="">Electronics</a>
-                            <a class="nav-links" href="">Furniture</a>
-                            <a class="nav-links" href="">Vehicles</a>
-                            <a class="nav-links" href="">Apparel & Accessories</a>
-                            <a class="nav-links" href="">Home & Garden</a>
-                            <a class="nav-links" href="">Sporting</a>
-                            <a class="nav-links" href="">Collectibles & Antiques</a>
+                            <a id="link-electronics" onclick="showContent('electronics')" class="nav-links">Electronics</a>
+                            <a id="link-furniture" onclick="showContent('furniture')" class="nav-links">Furniture</a>
+                            <a id="link-vehicles" onclick="showContent('vehicles')" class="nav-links">Vehicles</a>
+                            <a id="link-apparel" onclick="showContent('apparel')" class="nav-links">Apparel & Accessories</a>
+                            <a id="link-home" onclick="showContent('home')" class="nav-links">Home & Garden</a>
+                            <a id="link-sporting" onclick="showContent('sporting')" class="nav-links">Sporting</a>
+                            <a id="link-collectibles" onclick="showContent('collectibles')" class="nav-links">Collectibles & Antiques</a>
                         </nav>
                     </div>
 
                     <div class="Three box">
                         <h4>User</h4>
                         <nav>
-                            <a class="nav-links" href="">Dashboard</a>
-                            <a class="nav-links" href="">Item Listed</a>
-                            <a class="nav-links" href="">Analytics</a>
-                            <a class="nav-links" href="">Community</a>
-                            <a class="nav-links" href="">Earn</a>
+                            <a id="link-dashboard" onclick="showContent('dashboard')" class="nav-links">Dashboard</a>
+                            <a id="link-itemlisted" onclick="showContent('itemlisted')" class="nav-links">Item Listed</a>
+                            <a id="link-analytics" onclick="showContent('analytics')" class="nav-links">Analytics</a>
+                            <a id="link-community" onclick="showContent('community')" class="nav-links">Community</a>
+                            <a id="link-earn" onclick="showContent('earn')" class="nav-links">Earn</a>
                         </nav>
                     </div>
                 </div>
@@ -401,9 +401,349 @@
                     </div>
                 </section>
             </main>
+            
+
+            <!-- CATEGORIES -->
+            
+            <!-- ELECTRONICS Section -->
+            <main id="electronics" class="content-section">
+                <h3>Electronics</h3>
+                <p>Discover top-rated gadgets and smart devices on the marketplace.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/electronic_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Wireless Earbuds</h4>
+                                <h6>Electronics</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 29.9</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- FURNITURE Section -->
+            <main id="furniture" class="content-section" >
+                <h3>Furniture</h3>
+                <p>Upgrade your living space with stylish and affordable furniture.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/furniture_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Wooden Coffee Table</h4>
+                                <h6>Furniture</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 45.0</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- VEHICLES Section -->
+            <main id="vehicles" class="content-section">
+                <h3>Vehicles</h3>
+                <p>Find pre-owned bikes, cars, and scooters verified by trusted sellers.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/vehicle_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Used Sports Bike</h4>
+                                <h6>Vehicles</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 3200</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- APPAREL Section -->
+            <main id="apparel" class="content-section">
+                <h3>Apparel & Accessories</h3>
+                <p>Browse trendy clothing, shoes, and accessories for all styles.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/apparel_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Men’s Denim Jacket</h4>
+                                <h6>Apparel</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 38.0</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- HOME & GARDEN Section -->
+            <main id="home" class="content-section">
+                <h3>Home & Garden</h3>
+                <p>Shop quality home décor, lighting, and gardening tools for your space.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/home_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Indoor Plant Set</h4>
+                                <h6>Home & Garden</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 15.5</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- SPORTING Section -->
+            <main id="sporting" class="content-section">
+                <h3>Sporting</h3>
+                <p>Explore fitness gear, sports equipment, and outdoor adventure items.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/sporting_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Mountain Bike Helmet</h4>
+                                <h6>Sporting</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 28.5</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- COLLECTIBLES & ANTIQUES Section -->
+            <main id="collectibles" class="content-section">
+                <h3>Collectibles & Antiques</h3>
+                <p>Find timeless treasures, vintage décor, and rare collectible pieces.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/collectibles_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Vintage Gramophone</h4>
+                                <h6>Collectibles</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 150</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- DASHBOARD Section -->
+            <main id="dashboard" class="content-section">
+                <h3>Dashboard</h3>
+                <p>Overview of your activity, listings, and marketplace insights.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/dashboard_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Performance Overview</h4>
+                                <h6>Analytics Summary</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">View</div>
+                                <button class="svg-btn">Open Dashboard</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- ITEM LISTED Section -->
+            <main id="itemlisted" class="content-section">
+                <h3>Items Listed</h3>
+                <p>View and manage the items you’ve listed for sale on the marketplace.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/listed_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Smart Fitness Band</h4>
+                                <h6>Electronics</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 22.0</div>
+                                <button class="svg-btn">Manage</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- ANALYTICS Section -->
+            <main id="analytics" class="content-section">
+                <h3>Analytics</h3>
+                <p>Track views, impressions, and engagement for your listed items.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/analytics_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Sales Graph Summary</h4>
+                                <h6>Performance</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">Stats</div>
+                                <button class="svg-btn">View Details</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- COMMUNITY Section -->
+            <main id="community" class="content-section">
+                <h3>Community</h3>
+                <p>Join the community, share tips, and connect with other sellers.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/community_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Marketplace Forum</h4>
+                                <h6>Discussion</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">Join</div>
+                                <button class="svg-btn">Open Forum</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- EARN Section -->
+            <main id="earn" class="content-section">
+                <h3>Earn</h3>
+                <p>Earn rewards and commissions through referrals and successful sales.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/earn_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Referral Program</h4>
+                                <h6>Incentives</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">Earn Now</div>
+                                <button class="svg-btn">Start Earning</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- === END === -->
         </div>
     </div>
     <script src="/Pages/JS/app.js"></script>
-    <script src="/Pages/JS/auth.js"></script>
 </body>
 </html>

@@ -36,11 +36,9 @@ function showContent(sectionId) {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM Loaded'); // Debug log
     
-    // 1. Get references to the form containers (if they exist)
     const signUpSection = document.getElementById('new-account');
     const signInSection = document.getElementById('login-account');
 
-    // 2. Get references to the toggle links (if they exist)
     const signInBtn = document.getElementById('sign-in-btn');
     const signUpBtn = document.getElementById('sign-up-btn');
 
@@ -53,14 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleForms = (event, showForm, hideForm) => {
         event.preventDefault(); // Stop the <a> tag from navigating
         
-        // Hide the currently visible form smoothly
         hideForm.style.opacity = '0';
         setTimeout(() => {
             hideForm.style.display = 'none';
             
             // Show the target form
             showForm.style.display = 'block'; // Or 'grid', depending on your CSS layout
-            // Use a short timeout to re-enable the opacity transition
             setTimeout(() => {
                 showForm.style.opacity = '1';
             }, 10); // Small delay to ensure display:block is applied first
