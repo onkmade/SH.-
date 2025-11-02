@@ -44,3 +44,37 @@ button{
 h6{
     font-weight: 350;
 }
+
+/* Main list item working */
+
+.sell-item-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.listing.item-left{
+    padding: 32px;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    border: 3px solid gray;
+    background-color: whitesmoke;
+    border-style: dashed;
+    display: grid;
+    place-content: center;
+    
+    text-align: center;
+}
+
+#upload-images{
+    background-color: #1f2937;
+    width: fit-content;
+    color: white;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px; 
+}
+
+.item-left p{
+    margin-bottom: 1rem;
+}
