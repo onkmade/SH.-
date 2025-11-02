@@ -34,6 +34,10 @@ a{
     color: inherit;
 }
 
+li{
+    list-style: none;
+}
+
 button{
     outline: transparent;
     background: transparent;
@@ -78,3 +82,60 @@ h6{
 .item-left p{
     margin-bottom: 1rem;
 }
+
+form .group{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.condition-grp{
+    background-color: rgb(230, 255, 181);
+    border-radius: 0.35rem;
+    padding: 0.5rem;
+}
+
+ul{
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.condition-grp ul li{
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    width: fit-content;
+}
+
+/* Base style for all condition tags */
+.tag-cnd {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 3px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 12px;
+    text-align: center;
+    cursor: default;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Optional hover effect */
+.tag-cnd:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Individual condition colors */
+.cnd-1 { background-color: rgba(40, 167, 69, 0.2); color: #28a745; border: 2px solid #28a745; } /* Brand New */
+.cnd-2 { background-color: rgba(32, 201, 151, 0.2); color: #20c997; border: 2px solid #20c997; } /* Like New */
+.cnd-3 { background-color: rgba(23, 162, 184, 0.2); color: #17a2b8; border: 2px solid #17a2b8; } /* Mint Condition */
+.cnd-4 { background-color: rgba(255, 193, 7, 0.2); color: #ffc107; border: 2px solid #ffc107; } /* Gently Used */
+.cnd-5 { background-color: rgba(253, 126, 20, 0.2); color: #fd7e14; border: 2px solid #fd7e14; } /* Used */
+.cnd-6 { background-color: rgba(220, 53, 69, 0.2); color: #dc3545; border: 2px solid #dc3545; } /* For Parts */

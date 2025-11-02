@@ -298,20 +298,32 @@
                     </div>
                     <div class="listing item-right">
                         <form class="sell-form">
-                            <label for="item-title">Item Title</label>
-                            <input type="text" id="item-title" placeholder="Enter item name" required>
-
-                            <label for="item-category">Category</label>
-                            <select id="item-category" required>
-                                <option value="">Select a category</option>
-                                <option value="electronics">Electronics</option>
-                                <option value="furniture">Furniture</option>
-                                <option value="vehicles">Vehicles</option>
-                                <option value="apparel">Apparel & Accessories</option>
-                                <option value="home">Home & Garden</option>
-                                <option value="sporting">Sporting</option>
-                            </select>
-
+                            <div class="group itm-1">
+                                <label for="item-title">Item Title</label>
+                                <label for="item-category">Category</label>
+                                <input type="text" id="item-title" placeholder="Enter item name" required>
+                        
+                                <select id="item-category" required>
+                                    <option value="">Select a category</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="furniture">Furniture</option>
+                                    <option value="vehicles">Vehicles</option>
+                                    <option value="apparel">Apparel & Accessories</option>
+                                    <option value="home">Home & Garden</option>
+                                    <option value="sporting">Sporting</option>
+                                </select>
+                            </div>
+                            <div class="condition-grp">
+                                <label for="item-condition">Condition:</label>
+                                <ul>
+                                    <li class="tag-cnd cnd-1">Brand New</li>
+                                    <li class="tag-cnd cnd-2">Like New</li>
+                                    <li class="tag-cnd cnd-3">Mint Condition</li>
+                                    <li class="tag-cnd cnd-4">Gently Used</li>
+                                    <li class="tag-cnd cnd-5">Used</li>
+                                    <li class="tag-cnd cnd-6">For Parts</li>
+                                </ul>
+                            </div>
                             <label for="item-price">Price ($)</label>
                             <input type="number" id="item-price" placeholder="0.00" step="0.01" required>
 
