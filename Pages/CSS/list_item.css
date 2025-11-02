@@ -1,0 +1,46 @@
+:root{
+    --background:#F0F2F5;
+    --white-bg:white;
+    --primary-bg:#e1e1e1;
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Inter";
+    background-color: #F0F2F5;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+/* SVG Coloring and setting */
+/* <a> - settings */
+svg{
+    stroke: currentColor;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: grid;
+    place-content: center;
+    flex-shrink: 0; 
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    outline: transparent;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+h6{
+    font-weight: 350;
+}
