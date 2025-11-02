@@ -237,3 +237,15 @@ footer{
     display: none; 
     transition: opacity 0.3s ease;
 }
+
+.form-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.form-success {
+    color: #28a745;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
