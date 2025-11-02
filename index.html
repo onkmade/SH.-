@@ -58,7 +58,7 @@
                         </svg>
                     </div>
                     <button class="add-item">
-                        Add-Items
+                        <a id="link-sell" onclick="showContent('sell')" class="nav-links">Add-Item</a>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M8 12h8"/>
@@ -167,10 +167,7 @@
 
             <!-- List 1. FEED Section -->
             <main id="feed" class="content-section active-content">
-                <div class="sub-tags">
-                    <h3>Featured Goods</h3>
-                    <a class="view-more" href="#">view more</a>
-                </div>
+                <h3>Featured Goods</h3>
                 <p>Discover top-quality, verified pre-owned items from trusted sellers.</p>
                 <section class="featured-goods">
                     <div class="items-grid">
@@ -188,19 +185,20 @@
                                 <h4>Cotton Belt Watch</h4>
                                 <h6>Accessories</h6>
                             </div>
+                            <button class="place">Mumbai, Maharashtra</button>
                             <div class="card-btn">
-                                <div class="price-tag">$ 11.5</div>
-                                <button class="svg-btn">
-                                    <svg width="24" height="24" viewBox="0 0 20 20" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.0416 18.3334H8.54165C5.79165 18.3334 4.41665 18.3334 3.56248 17.4792C2.70831 16.625 2.70831 15.25 2.70831 12.5V9.16671C2.70831 7.59504 2.70831 6.81004 3.19665 6.32171C3.68498 5.83337 4.46998 5.83337 6.04165 5.83337H12.7083C14.28 5.83337 15.065 5.83337 15.5533 6.32171C16.0416 6.81004 16.0416 7.59504 16.0416 9.16671V10.8334" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12.7083 7.91669C12.7083 4.69502 11.2166 1.66669 9.37496 1.66669C7.53329 1.66669 6.04163 4.69502 6.04163 7.91669M12.7083 15.8334H17.7083M15.2083 18.3334V13.3334" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    Add to cart
-                                </button>
+                                <button class="price-tag">$ 11,500</button>
+                                <div class="btn-grp">
+                                    <button class="view_details">
+                                        <p>View Details</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-out-up-right-icon lucide-circle-arrow-out-up-right"><path d="M22 12A10 10 0 1 1 12 2"/><path d="M22 2 12 12"/><path d="M16 2h6v6"/></svg>
+                                    </button>
+                                </div>
                             </div>
                         </article>
+
                         <article>
-                            <img src="Assets/images/item_2.jpeg" alt="">
+                                <img src="Assets/Images/item_2.jpeg" alt="">
                                 <figcaption>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-plus-icon lucide-heart-plus">
@@ -210,21 +208,22 @@
                                     </button>
                                 </figcaption>
                             <div class="card-info">
-                                <h4>Digital Home Monitor</h4>
-                                <h6>Electronics</h6>
+                                <h4>Digital Clock</h4>
+                                <h6>Home</h6>
                             </div>
+                            <button class="place">Nagpur</button>
                             <div class="card-btn">
-                                <div class="price-tag">$ 11.5</div>
-                                <button class="svg-btn">
-                                    <svg width="24" height="24" viewBox="0 0 20 20" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.0416 18.3334H8.54165C5.79165 18.3334 4.41665 18.3334 3.56248 17.4792C2.70831 16.625 2.70831 15.25 2.70831 12.5V9.16671C2.70831 7.59504 2.70831 6.81004 3.19665 6.32171C3.68498 5.83337 4.46998 5.83337 6.04165 5.83337H12.7083C14.28 5.83337 15.065 5.83337 15.5533 6.32171C16.0416 6.81004 16.0416 7.59504 16.0416 9.16671V10.8334" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12.7083 7.91669C12.7083 4.69502 11.2166 1.66669 9.37496 1.66669C7.53329 1.66669 6.04163 4.69502 6.04163 7.91669M12.7083 15.8334H17.7083M15.2083 18.3334V13.3334" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
+                                <button class="price-tag">$ 11.5</button>
+                                <div class="btn-grp">
+                                    <button class="view_details">
+                                        <p>View Details</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-out-up-right-icon lucide-circle-arrow-out-up-right"><path d="M22 12A10 10 0 1 1 12 2"/><path d="M22 2 12 12"/><path d="M16 2h6v6"/></svg>
+                                    </button>
+                                </div>
                             </div>
                         </article>
                         <article>
-                            <img src="Assets/images/item_3.jpeg" alt="">
+                                <img src="Assets/Images/item_3.jpeg" alt="">
                                 <figcaption>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-plus-icon lucide-heart-plus">
@@ -234,19 +233,20 @@
                                     </button>
                                 </figcaption>
                             <div class="card-info">
-                                <h4>Sunrise Clock</h4>
-                                <h6>Electronics</h6>
+                                <h4>Cotton Belt Watch</h4>
+                                <h6>Accessories</h6>
                             </div>
+                            <button class="place">Chh. Sambhaji Nagar</button>
                             <div class="card-btn">
-                                <div class="price-tag">$ 11.5</div>
-                                <button class="svg-btn">
-                                    <svg width="24" height="24" viewBox="0 0 20 20" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.0416 18.3334H8.54165C5.79165 18.3334 4.41665 18.3334 3.56248 17.4792C2.70831 16.625 2.70831 15.25 2.70831 12.5V9.16671C2.70831 7.59504 2.70831 6.81004 3.19665 6.32171C3.68498 5.83337 4.46998 5.83337 6.04165 5.83337H12.7083C14.28 5.83337 15.065 5.83337 15.5533 6.32171C16.0416 6.81004 16.0416 7.59504 16.0416 9.16671V10.8334" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12.7083 7.91669C12.7083 4.69502 11.2166 1.66669 9.37496 1.66669C7.53329 1.66669 6.04163 4.69502 6.04163 7.91669M12.7083 15.8334H17.7083M15.2083 18.3334V13.3334" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
+                                <button class="price-tag">$ 11.5</button>
+                                <div class="btn-grp">
+                                    <button class="view_details">
+                                        <p>View Details</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-out-up-right-icon lucide-circle-arrow-out-up-right"><path d="M22 12A10 10 0 1 1 12 2"/><path d="M22 2 12 12"/><path d="M16 2h6v6"/></svg>
+                                    </button>
+                                </div>
                             </div>
-                        </article>
+                        </article>      
                     </div>
                 </section>
             </main>
@@ -740,8 +740,7 @@
                     </div>
                 </section>
             </main>
-
-            <!-- === END === -->
+            <!-- === end of main === -->
         </div>
     </div>
     <script src="Pages/JS/app.js"></script>

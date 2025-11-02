@@ -127,6 +127,12 @@ header .hs-wrap{
     flex-grow: 1;
     min-width: 200px;
     max-width: 450px;
+
+}
+
+.hs-wrap:focus{
+    border: 2px solid #828282;
+    box-shadow: 0px 1px 3px solid rgba(0,0,0,0.1);
 }
 
 header .hs-wrap svg{
@@ -145,6 +151,8 @@ header .hs-wrap svg{
         color: #b3b3b3;
     }
 }
+
+
 
 header .header-right{
     display: flex;
@@ -329,6 +337,8 @@ footer.web-footer{
     margin-bottom: 0.5rem;
 }
 
+/* Main content area */
+
 main img{
     display: block;
     max-width: 100%;
@@ -336,6 +346,11 @@ main img{
     object-fit: cover;
     object-position: center;
     border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+}
+
+main img:hover{
+    transform: scale(1.015);
 }
 
 .items-grid{
@@ -344,6 +359,8 @@ main img{
     gap: 1rem;
 }
 
+
+/* Card Info */
 .items-grid article{
     width: 250px;
     position: relative;
@@ -353,15 +370,9 @@ main img{
     display: grid;
     gap: 0.5rem;
     line-height: 1.6;
-    padding: 5px;
+    padding: 0.45rem;
     border-radius: 3px;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
-}
-
-.items-grid .card-btn{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.25rem;
 }
 
 figcaption{
@@ -388,25 +399,57 @@ figcaption button:hover{
     transform: scale(1.1);
 }
 
-.card-btn button{
-    background-color: rgb(230, 230, 230);
-    padding: 0.25rem 0.45rem;
-    border-radius: 3px;
-}
-
-.price-tag{
-    background-color:rgb(230, 230, 230);
-    padding: 0.25rem 0.65rem;
-    border-radius: 0.25rem;
-}
-
-button.svg-btn{
+.card-info{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
-    font-size: large;
-    border-radius: 6px;
+}
+
+.place{
+    background-color: rgb(223, 237, 255);
+    width: fit-content;
+    padding:4px 8px;
+    border-radius: 4px;
+}
+
+.items-grid .card-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+button.place{
+    color: rgb(0, 78, 194);
+    font-size: 12px;
+    margin-top: 0.35rem;
+}
+
+.card-btn button{
+    border: 2px solid #a5a5a5;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+.btn-grp{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.btn-grp button{
+    border: 2px solid #a5a5a5;
+    padding: 4px 8px;
+}
+
+.view_details{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-grp svg{
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
 }
 
 /* Categories Grid */
@@ -436,6 +479,9 @@ button.svg-btn{
     color: #1f2937;
 }
 
+.card-info h6{
+    font-size:0.85rem;
+}
 .category-card p {
     color: #6b7280;
     font-size: 0.875rem;
