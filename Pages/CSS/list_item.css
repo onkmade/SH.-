@@ -65,7 +65,7 @@ h6{
     border-style: dashed;
     display: grid;
     place-content: center;
-    
+    place-items: center;
     text-align: center;
 }
 
@@ -86,6 +86,12 @@ h6{
 form .group{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.group.itm-2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
 }
 
@@ -128,14 +134,35 @@ ul{
 
 /* Optional hover effect */
 .tag-cnd:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 
 /* Individual condition colors */
-.cnd-1 { background-color: rgba(40, 167, 69, 0.2); color: #28a745; border: 2px solid #28a745; } /* Brand New */
-.cnd-2 { background-color: rgba(32, 201, 151, 0.2); color: #20c997; border: 2px solid #20c997; } /* Like New */
-.cnd-3 { background-color: rgba(23, 162, 184, 0.2); color: #17a2b8; border: 2px solid #17a2b8; } /* Mint Condition */
-.cnd-4 { background-color: rgba(255, 193, 7, 0.2); color: #ffc107; border: 2px solid #ffc107; } /* Gently Used */
-.cnd-5 { background-color: rgba(253, 126, 20, 0.2); color: #fd7e14; border: 2px solid #fd7e14; } /* Used */
-.cnd-6 { background-color: rgba(220, 53, 69, 0.2); color: #dc3545; border: 2px solid #dc3545; } /* For Parts */
+.cnd-1 { background-color: rgba(40, 167, 69, 0.1); color: #28a745; border: 2px solid #28a745; } /* Brand New */
+.cnd-2 { background-color: rgba(32, 201, 151, 0.1); color: #20c997; border: 2px solid #20c997; } /* Like New */
+.cnd-3 { background-color: rgba(23, 162, 184, 0.1); color: #17a2b8; border: 2px solid #17a2b8; } /* Mint Condition */
+.cnd-4 { background-color: rgba(255, 193, 7, 0.1); color: #ffc107; border: 2px solid #ffc107; } /* Gently Used */
+.cnd-5 { background-color: rgba(253, 126, 20, 0.1); color: #fd7e14; border: 2px solid #fd7e14; } /* Used */
+.cnd-6 { background-color: rgba(220, 53, 69, 0.1); color: #dc3545; border: 2px solid #dc3545; } /* For Parts */
+
+button.list-btn{
+    background-color: #1f2937;
+    color: white;
+    padding: 0.78rem 1rem;
+    border-radius: 6px;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.95rem;
+}
+
+.btn-list{
+    display: grid;
+    place-content: center;
+}
+
+
+button.list-btn:hover{
+    transform: translateY(-1.5px);
+    transform: scale(1.015);
+}

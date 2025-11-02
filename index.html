@@ -292,9 +292,7 @@
                     <div class="listing item-left">
                         <h3>Upload Product Images</h3>
                         <p>Add 1–4 clear photos showing your product from different angles. JPG or PNG only, max 5MB each.</p>
-                        <div class="button-wrap">
-                            <button type="submit" id="upload-images">Upload Images</button>
-                        </div>
+                        <button type="submit" id="upload-images">Upload Images</button>
                     </div>
                     <div class="listing item-right">
                         <form class="sell-form">
@@ -324,13 +322,26 @@
                                     <li class="tag-cnd cnd-6">For Parts</li>
                                 </ul>
                             </div>
-                            <label for="item-price">Price ($)</label>
-                            <input type="number" id="item-price" placeholder="0.00" step="0.01" required>
+                            <div class="group itm-2">
+                                <label for="item-price">Price (₹)</label>
+                                <label for="date-listed">Date:</label>
+                                <label for="location">Location:</label>
+                                <input type="number" id="item-price" placeholder="0.00" step="0.01" required>
+                                <input type="date" name="" id="date-listed">
+                                <input type="text" id="location" name="location" placeholder="Enter your location" />
+                            </div>
 
                             <label for="item-description">Description</label>
                             <textarea id="item-description" rows="5" placeholder="Describe your item..." required></textarea>
-
-                            <button type="submit" class="submit-btn">List Item</button>
+                            <div class="group itm-3">
+                                <label for="seller-name">Name:</label>
+                                <label for="contact">Contact:</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                                <input type="tel" id="contact" name="contact" placeholder="Enter your phone or email" required />
+                            </div>
+                            <div class="btn-list">
+                                <button type="submit" class="list-btn">List Item</button>
+                            </div>
                         </form>
                     </div>
                 </div>
