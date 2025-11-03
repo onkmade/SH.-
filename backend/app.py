@@ -26,7 +26,14 @@ from sqlalchemy import String, Integer, Float, Text, DateTime, func, ForeignKey
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-change-in-production'
-CORS(app)
+# Configure CORS for API requests. When the frontend uses `fetch(..., credentials: 'include')`
+# the server must allow credentials and set a specific origin (cannot be '*').
+# Adjust the origins list to match where you serve the frontend (example below uses port 5500).
+CORS(app, supports_credentials=True, resources={r"/api/*": {"origins": [
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+    "http://127.0.0.1:5501"
+]}})
 
 # --- START DATABASE CONFIGURATION ---
 # Use SQLite database, which will create a file named 'site.db'
@@ -121,11 +128,11 @@ class Product(db.Model):
             'status': self.status,
             'views': self.views,
             'watchlist_count': self.watchlist_count,
-            'nano_tag': json.loads(self.nano_tag),
+            'nano_tag': _safe_load_json(self.nano_tag),
             'blockchain_id': self.blockchain_id,
             'buyer_id': self.buyer_id,
-            'created_at': self.created_at.isoformat(),
-            'updated_at': self.updated_at.isoformat()
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.created_at else None
         }
 
 # Define an anonymous seller ID for unauthenticated listings
@@ -320,6 +327,15 @@ class NanoTagManager:
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+def _safe_load_json(raw):
+    """Safely load JSON from a string, returning an empty dict on failure."""
+    try:
+        if not raw:
+            return {}
+        return json.loads(raw)
+    except (TypeError, json.JSONDecodeError):
+        return {}
+
 def generate_user_id():
     return f"USR_{uuid.uuid4().hex[:12].upper()}"
 
@@ -502,32 +518,48 @@ def list_product():
 
 @app.route('/api/products/activate/<product_id>', methods=['POST'])
 def activate_product(product_id):
-    """Activate product after nano-tag attachment"""
-    
-    product = db.session.get(Product, product_id)
-    if not product:
-        return jsonify({'error': 'Product not found'}), 404
-    
-    # Check if the current session user (or anonymous) is the seller
-    current_user_id = session.get('user_id', ANONYMOUS_SELLER_ID)
-    if product.seller_id != current_user_id:
-        return jsonify({'error': 'Unauthorized'}), 403
-    
-    tag_id = json.loads(product.nano_tag).get('tag_id')
-    if NanoTagManager.activate_tag(tag_id, product_id):
+    """Activate product after nano-tag attachment."""
+    try:
+        # 1️⃣ Tìm sản phẩm
+        product = db.session.get(Product, product_id)
+        if not product:
+            return jsonify({'error': 'Product not found'}), 404
+
+        # 2️⃣ Kiểm tra quyền sở hữu
+        current_user_id = session.get('user_id', ANONYMOUS_SELLER_ID)
+        if product.seller_id != current_user_id:
+            return jsonify({'error': 'Unauthorized'}), 403
+
+        # 3️⃣ Đọc tag_id an toàn
+        nano_tag_data = _safe_load_json(product.nano_tag)
+        tag_id = nano_tag_data.get('tag_id') if nano_tag_data else None
+        if not tag_id:
+            return jsonify({'error': 'Missing or invalid nano-tag data'}), 400
+
+        # 4️⃣ Kích hoạt tag
+        success = NanoTagManager.activate_tag(tag_id, product_id)
+        if not success:
+            return jsonify({'error': 'Activation failed'}), 400
+
+        # 5️⃣ Cập nhật trạng thái sản phẩm
+        product.status = 'active'
+        db.session.commit()
+
         return jsonify({
             'message': 'Product activated successfully',
-            'status': 'active'
-        })
-    
-    return jsonify({'error': 'Activation failed'}), 400
+            'status': product.status
+        }), 200
+
+    except SQLAlchemyError as e:
+        db.session.rollback()
+        return jsonify({'error': 'Database error', 'details': str(e)}), 500
 
 @app.route('/api/products/feed', methods=['GET'])
 def get_feed():
     """Get product feed"""
     category = request.args.get('category')
     
-    query = db.select(Product).filter_by(status='active').order_by(Product.created_at.desc())
+    query = db.select(Product).order_by(Product.created_at.desc())
     if category:
         query = query.filter_by(category=category)
         
@@ -590,7 +622,7 @@ def verify_product(product_id):
             'sales_count': seller.sales_count if seller else 0
         },
         'blockchain_verified': blockchain_record is not None,
-        'nano_tag_activated': json.loads(product.nano_tag).get('activated', False)
+        'nano_tag_activated': _safe_load_json(product.nano_tag).get('activated', False)
     })
 
 @app.route('/api/products/transfer/<product_id>', methods=['POST'])
