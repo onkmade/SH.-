@@ -9,4 +9,3 @@ Welcome to the Secondhand Marketplace! This platform allows users to buy and sel
 - Messaging System: Communicate directly with buyers and sellers.
 - Secure Transactions: Safe payment options to ensure a smooth buying and selling experience.
 - Reviews and Ratings: Leave feedback for buyers and sellers to build trust within the community.
-
