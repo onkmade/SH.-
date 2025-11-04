@@ -793,29 +793,99 @@
             <!-- SETTINGS Section -->
             <main id="settings" class="content-section">
                 <h3>Settings</h3>
-                <p>Manage your account preferences, privacy, and notifications here.</p>
-                <section class="featured-goods">
-                    <div class="items-grid">
-                        <article>
-                            <img src="Assets/images/settings_item.jpeg" alt="">
-                            <figcaption>
-                                <button>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                                    </svg>
-                                </button>
-                            </figcaption>
-                            <div class="card-info">
-                                <h4>Account Settings</h4>
-                                <h6>Profile Management</h6>
-                            </div>
-                            <div class="card-btn">
-                                <div class="price-tag">Edit</div>
-                                <button class="svg-btn">Open Settings</button>
-                            </div>
-                        </article>
-                    </div>
+                <p>Manage your account, notifications, privacy, and marketplace preferences.</p>
+
+                <!-- Account Section -->
+                <section class="settings-section">
+                    <h4>Account</h4>
+                    <label>
+                        Username:
+                        <input type="text" value="JohnDoe" placeholder="Enter your username">
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" value="johndoe@example.com">
+                    </label>
+                    <label>
+                        Profile Visibility:
+                        <select>
+                            <option value="public" selected>Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </label>
                 </section>
+
+                <!-- Notifications Section -->
+                <section class="settings-section">
+                    <h4>Notifications</h4>
+                    <label>
+                        <input type="checkbox" checked>
+                        Email notifications
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Promotional emails
+                    </label>
+                    <label>
+                        <input type="checkbox" checked>
+                        SMS alerts
+                    </label>
+                </section>
+
+                <!-- Privacy & Security Section -->
+                <section class="settings-section">
+                    <h4>Privacy & Security</h4>
+                    <label>
+                        Change Password:
+                        <input type="password" placeholder="New Password">
+                    </label>
+                    <label>
+                        Two-Factor Authentication:
+                        <input type="checkbox" checked>
+                    </label>
+                </section>
+
+                <!-- Selling Preferences -->
+                <section class="settings-section">
+                    <h4>Selling Preferences</h4>
+                    <label>
+                        Default Shipping Method:
+                        <select>
+                            <option>Standard</option>
+                            <option>Express</option>
+                        </select>
+                    </label>
+                    <label>
+                        Default Payment Method:
+                        <select>
+                            <option>PayPal</option>
+                            <option>Credit Card</option>
+                            <option>UPI</option>
+                        </select>
+                    </label>
+                </section>
+
+                <!-- Marketplace Options -->
+                <section class="settings-section">
+                    <h4>Marketplace Options</h4>
+                    <label>
+                        UI Theme:
+                        <select>
+                            <option selected>Light Mode</option>
+                            <option>Dark Mode</option>
+                        </select>
+                    </label>
+                    <label>
+                        Language:
+                        <select>
+                            <option selected>English</option>
+                            <option>Hindi</option>
+                            <option>Other</option>
+                        </select>
+                    </label>
+                </section>
+
+                <button class="save-btn">Save Changes</button>
             </main>
 
             <!-- FEEDBACK Section -->
