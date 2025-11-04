@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = (localStorage.getItem("API_BASE_URL") || "http://localhost:5000/api");
 
 // Utility function for API calls
 async function apiCall(endpoint, options = {}) {
@@ -572,3 +572,74 @@ function updateUIForLoggedInUser(name) {
 window.viewProductDetails = viewProductDetails;
 window.toggleWatchlist = toggleWatchlist;
 window.loadProductFeed = loadProductFeed;
+
+// Tip: override API base in DevTools if needed:
+// localStorage.setItem('API_BASE_URL','http://127.0.0.1:5000/api')
+
+// --- core fetch helpers ---
+async function apiJSON(endpoint, { method = "GET", body = null, headers = {} } = {}) {
+  const res = await fetch(`${API_BASE_URL}${endpoint}`, {
+    method,
+    credentials: "include",
+    headers: { "Content-Type": "application/json", ...headers },
+    body: body ? JSON.stringify(body) : null,
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+  return data;
+}
+
+async function apiForm(endpoint, formData) {
+  const res = await fetch(`${API_BASE_URL}${endpoint}`, {
+    method: "POST",
+    credentials: "include",
+    body: formData,
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+  return data;
+}
+
+// --- endpoints used by app ---
+async function authRegister(email, password) {
+  return apiJSON("/auth/register", { method: "POST", body: { email, password } });
+}
+async function authLogin(email, password) {
+  return apiJSON("/auth/login", { method: "POST", body: { email, password } });
+}
+async function getProfile() {
+  return apiJSON("/user/profile");
+}
+async function getUserListings() {
+  return apiJSON("/user/listings");
+}
+
+// products
+async function listProduct(formData) {
+  return apiForm("/products/list", formData);
+}
+async function activateProduct(productId) {
+  return apiJSON(`/products/activate/${productId}`, { method: "POST" });
+}
+async function getFeed(category = "") {
+  const q = category ? `?category=${encodeURIComponent(category)}` : "";
+  return apiJSON(`/products/feed${q}`);
+}
+async function getProduct(productId) {
+  return apiJSON(`/products/${productId}`);
+}
+async function getProductJSON(productId) {
+  return apiJSON(`/products/json/${productId}`);
+}
+async function verifyProduct(productId) {
+  return apiJSON(`/products/verify/${productId}`, { method: "POST" });
+}
+async function transferOwnership(productId, newOwnerId) {
+  return apiJSON(`/products/transfer/${productId}`, { method: "POST", body: { new_owner_id: newOwnerId } });
+}
+
+// expose for other scripts
+window.api = {
+  authRegister, authLogin, getProfile, getUserListings,
+  listProduct, activateProduct, getFeed, getProduct, getProductJSON, verifyProduct, transferOwnership
+};

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sell a Product</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/list_item.css" />
+  <style>
+    .hint { font-size: 12px; opacity: .75; }
+    .error { color: #c0392b; font-size: 12px; }
+    .valid { outline: 2px solid #28a74533; }
+    .invalid { outline: 2px solid #c0392b33; }
+    .card-grid { display:grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap:16px; }
+    .card { border:1px solid #eee; border-radius:12px; padding:12px; }
+    .tag { font-size:12px; padding:2px 6px; background:#eef; border-radius:6px; display:inline-block; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>List your product</h1>
+
+    <form id="sellerForm" enctype="multipart/form-data" novalidate>
+      <div class="grid">
+        <label>Title* <input type="text" name="title" id="title" required maxlength="100" /></label>
+        <label>Category* <input type="text" name="category" id="category" required /></label>
+        <label>Subcategory <input type="text" name="subcategory" id="subcategory" /></label>
+        <label>Brand <input type="text" name="brand" id="brand" /></label>
+        <label>Model <input type="text" name="model" id="model" /></label>
+        <label>Condition* 
+          <select name="condition" id="condition" required>
+            <option value="">Select</option>
+            <option>New</option>
+            <option>Like New</option>
+            <option>Used</option>
+            <option>For Parts</option>
+          </select>
+        </label>
+        <label>Price (₹)* <input type="number" name="price" id="price" min="1" step="0.01" required /></label>
+        <label>Location <input type="text" name="location" id="location" /></label>
+      </div>
+      <label>Description
+        <textarea name="description" id="description" rows="4" maxlength="2000"></textarea>
+      </label>
+
+      <label>Images* (JPG/PNG, up to 5MB each)
+        <input type="file" id="images" name="images" accept=".jpg,.jpeg,.png" multiple />
+      </label>
+      <div id="imagePreview" class="card-grid"></div>
+      <div id="formErrors" class="error"></div>
+
+      <button type="submit" id="submitBtn">Submit</button>
+      <span class="hint">You’ll see the new card below instantly.</span>
+    </form>
+
+    <hr />
+
+    <section>
+      <h2>Your Listings</h2>
+      <div id="sellerCards" class="card-grid"></div>
+    </section>
+  </main>
+
+  <script src="../JS/api.js"></script>
+  <script src="../JS/seller.js"></script>
+</body>
+</html>
