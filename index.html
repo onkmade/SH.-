@@ -146,20 +146,26 @@
                     </div>
                 </div>
                 <footer class="setting">
-                    <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+                <!-- Settings Link -->
+                    <a id="link-settings" onclick="showContent('settings')" class="nav-links" href="javascript:void(0);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon">
+                            <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
                             <circle cx="12" cy="12" r="3"/>
                         </svg>
-                        Setting
+                        Settings
                     </a>
-                    <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-share-icon lucide-message-square-share"><path d="M12 3H4a2 2 0 0 0-2 2v16.286a.71.71 0 0 0 1.212.502l2.202-2.202A2 2 0 0 1 6.828 19H20a2 2 0 0 0 2-2v-4"/>
+
+                    <!-- Feedback Link -->
+                    <a id="link-feedback" onclick="showContent('feedback')" class="nav-links" href="javascript:void(0);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-share-icon">
+                            <path d="M12 3H4a2 2 0 0 0-2 2v16.286a.71.71 0 0 0 1.212.502l2.202-2.202A2 2 0 0 1 6.828 19H20a2 2 0 0 0 2-2v-4"/>
                             <path d="M16 3h6v6"/>
                             <path d="m16 9 6-6"/>
                         </svg>
                         Feedback
                     </a>
-                </footer>
+            </footer>
+
             </div>
         </aside>
 
@@ -775,6 +781,63 @@
                     </div>
                 </section>
             </main>
+
+            <!-- SETTINGS Section -->
+            <main id="settings" class="content-section" style="display: none;">
+                <h3>Settings</h3>
+                <p>Manage your account preferences, privacy, and notifications here.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/settings_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Account Settings</h4>
+                                <h6>Profile Management</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">Edit</div>
+                                <button class="svg-btn">Open Settings</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- FEEDBACK Section -->
+            <main id="feedback" class="content-section" style="display: none;">
+                <h3>Feedback</h3>
+                <p>We value your input! Share your thoughts or report any issues below.</p>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/feedback_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Submit Your Feedback</h4>
+                                <h6>Help Us Improve</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">Form</div>
+                                <button class="svg-btn">Open Form</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
             <!-- === end of main === -->
         </div>
     </div>
