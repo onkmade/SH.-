@@ -889,32 +889,36 @@
             </main>
 
             <!-- FEEDBACK Section -->
-            <main id="feedback" class="content-section">
+            <main id="feedback" class="content-section" style="display: none;">
                 <h3>Feedback</h3>
-                <p>We value your input! Share your thoughts or report any issues below.</p>
-                <section class="featured-goods">
-                    <div class="items-grid">
-                        <article>
-                            <img src="Assets/images/feedback_item.jpeg" alt="">
-                            <figcaption>
-                                <button>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                                    </svg>
-                                </button>
-                            </figcaption>
-                            <div class="card-info">
-                                <h4>Submit Your Feedback</h4>
-                                <h6>Help Us Improve</h6>
-                            </div>
-                            <div class="card-btn">
-                                <div class="price-tag">Form</div>
-                                <button class="svg-btn">Open Form</button>
-                            </div>
-                        </article>
-                    </div>
-                </section>
+                <p>We value your input! Share your thoughts, suggestions, or report any issues below.</p>
+                        
+                <form class="feedback-form">
+                    <label>
+                        Name:
+                        <input type="text" placeholder="Your Name" required>
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" placeholder="Your Email" required>
+                    </label>
+                    <label>
+                        Type of Feedback:
+                        <select required>
+                            <option value="">Select</option>
+                            <option>Bug Report</option>
+                            <option>Feature Request</option>
+                            <option>General Feedback</option>
+                        </select>
+                    </label>
+                    <label>
+                        Message:
+                        <textarea placeholder="Write your feedback here..." rows="5" required></textarea>
+                    </label>
+                    <button type="submit" class="save-btn">Submit Feedback</button>
+                </form>
             </main>
+
 
             <!-- === end of main === -->
         </div>
