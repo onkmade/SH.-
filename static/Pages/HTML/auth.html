@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Auth</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Pages/CSS/auth.css">
+</head>
+<body>
+    <div class="auth-wrap">
+        <!-- Style Section -->
+        <section class="s-left">
+            <header class="p-4">
+                <a href="#">SH.</a>
+            </header>
+            <main class="text-area">
+                <h3 class="heading">Join Secondhand</h3>
+                <p class="sub-heading">Join Thousands of users buying and selling trusted secondhand products</p>
+            </main>
+            <footer>
+                <h6 class="highlight-line"><i>SAFE. SIMPLE. SUSTAINABLE</i></h6>
+                <a href="#">Learn-more</a>
+            </footer>
+        </section>
+
+        <!-- Sign-Up Form -->
+        <section class="s-right" id="new-account">
+            <div class="right-wrap">
+                <header class="header-top">
+                    <h4>Create Your Account</h4>
+                    <h5>ReMarket - Give Items a Second Life.</h5>
+                </header>
+                <form onsubmit="return false;">
+                    <div class="email grp">
+                        <label for="email-up">Email:</label>
+                        <input type="email" id="email-up" placeholder="Enter your Email">
+                    </div>
+                    <div class="pass grp">
+                        <label for="password-up">Password:</label>
+                        <input type="password" id="password-up" placeholder="Enter your Password">
+                    </div>
+                </form>
+                <div class="policy">
+                    <input type="checkbox" id="policy-up">
+                    <p>I agree to the <a href="#">terms & Privacy Policy</a></p>
+                </div>
+                <div class="btn">
+                    <button class="Sign-up">Sign-Up</button>
+                </div>
+                <p class="choice">Already have an account? 
+                    <a href="#" id="sign-in-btn">Sign-in.</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Sign-In Form (Initially Hidden) -->
+        <section class="s-sign-in" id="login-account">
+            <div class="right-wrap">
+                <header class="header-top">
+                    <h4>Welcome Back</h4>
+                    <h5>Explore more pre-owned goods</h5>
+                </header>
+                <form onsubmit="return false;">
+                    <div class="email grp">
+                        <label for="email-in">Email:</label>
+                        <input type="email" id="email-in" placeholder="Enter your Email">
+                    </div>
+                    <div class="pass grp">
+                        <label for="password-in">Password:</label>
+                        <input type="password" id="password-in" placeholder="Enter your Password">
+                    </div>
+                </form>
+                <div class="policy">
+                    <input type="checkbox" id="policy-in">
+                    <p>Remember me</p>
+                </div>
+                <div class="btn">
+                    <button class="Sign-up">Sign-In</button>
+                </div>
+                <p class="choice">Don't have an account 
+                    <a href="#" id="sign-up-btn">Sign-up</a>
+                </p>
+            </div>
+        </section>
+    </div>
+    <script src="/Pages/JS/app.js"></script>
+</body>
+</html>

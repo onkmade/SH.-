@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>SH.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated style files -->
+    <!--<link rel="stylesheet" href="Pages/CSS/style.css">
+    <link rel="stylesheet" href="Pages/CSS/list_item.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Pages/CSS/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Pages/CSS/list_item.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .content-section.active-content {
+            opacity: 1;
+            display: block;
+        }
+
+        .content-section h3 {
+             font-size: 1.5rem;
+             font-weight: 700;
+             margin-bottom: 16px;
+             color: #1f2937;
+        }
+
+        .content-section ul, 
+        .content-section p,
+        .content-section label,
+        .content-section button {
+            line-height: 1.6;
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+    <div class="buddle">
+        <header class="site-header">
+            <div class="h-wrap">
+                <div class="header-left">
+                    <a href="#" class="logo-sh">SH.</a>
+                </div>
+                <div class="header-center">
+                    <button class="categories">
+                        <a id="link-categories" onclick="showContent('categories')" class="nav-links" >Browse Categories</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="hs-wrap">
+                        <input type="search" placeholder="Search for everything here">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search">
+                            <path d="m21 21-4.34-4.34"/>
+                            <circle cx="11" cy="11" r="8"/>
+                        </svg>
+                    </div>
+                    <button class="add-item">
+                        <a id="link-sell" onclick="showContent('sell')" class="nav-links">Add-Item</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12h8"/>
+                            <path d="M12 8v8"/>
+                        </svg>
+                    </button>
+                    <button class="message">
+                        <a id="link-inbox" onclick="showContent('inbox')" class="nav-links">Message</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-icon lucide-message-square">
+                            <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </button>
+                    <button class="wishlist">
+                        <a id="link-watchlist" onclick="showContent('watchlist')" class="nav-links">Watchlist</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-heart-icon lucide-calendar-heart">
+                            <path d="M12.127 22H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5.125"/>
+                            <path d="M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z"/>
+                            <path d="M16 2v4"/>
+                            <path d="M3 10h18"/>
+                            <path d="M8 2v4"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="header-right">
+                    <button class="settings">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings">
+                            <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </button>
+                    <button class="bell">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0"/>
+                            <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>
+                        </svg>
+                    </button>
+                    <button class="user">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- ASIDE SECTION -->
+        <aside>
+            <div class="sidebar">
+                <div class="boxes">
+                    <div class="top box">
+                        <h4>Explore</h4>
+                        <nav>
+                            <a id="link-feed" onclick="showContent('feed')" class="nav-links active" >Feed</a>
+                            <a id="link-categories" onclick="showContent('categories')" class="nav-links" >Browse Categories</a>
+                            <a id="link-sell" onclick="showContent('sell')" class="nav-links">List an Item (Sell)</a>
+                            <a id="link-inbox" onclick="showContent('inbox')" class="nav-links">Inbox</a>
+                            <a id="link-watchlist" onclick="showContent('watchlist')" class="nav-links">My Watchlist</a>
+                            <a id="link-local" onclick="showContent('local')" class="nav-links">Local Listings</a>
+                        </nav>
+                    </div>
+                    <div class="down box">
+                        <h4>Categories</h4>
+                        <nav>
+                            <a id="link-electronics" onclick="showContent('electronics')" class="nav-links">Electronics</a>
+                            <a id="link-furniture" onclick="showContent('furniture')" class="nav-links">Furniture</a>
+                            <a id="link-vehicles" onclick="showContent('vehicles')" class="nav-links">Vehicles</a>
+                            <a id="link-apparel" onclick="showContent('apparel')" class="nav-links">Apparel & Accessories</a>
+                            <a id="link-home" onclick="showContent('home')" class="nav-links">Home & Garden</a>
+                            <a id="link-sporting" onclick="showContent('sporting')" class="nav-links">Sporting</a>
+                            <a id="link-collectibles" onclick="showContent('collectibles')" class="nav-links">Collectibles & Antiques</a>
+                        </nav>
+                    </div>
+
+                    <div class="Three box">
+                        <h4>User</h4>
+                        <nav>
+                            <a id="link-dashboard" onclick="showContent('dashboard')" class="nav-links">Dashboard</a>
+                            <a id="link-itemlisted" onclick="showContent('itemlisted')" class="nav-links">Item Listed</a>
+                            <a id="link-analytics" onclick="showContent('analytics')" class="nav-links">Analytics</a>
+                            <a id="link-community" onclick="showContent('community')" class="nav-links">Community</a>
+                            <a id="link-earn" onclick="showContent('earn')" class="nav-links">Earn</a>
+                        </nav>
+                    </div>
+                </div>
+                <footer class="setting">
+                    <!-- Settings Link -->
+                    <a id="link-settings" onclick="showContent('settings')" class="nav-links" href="javascript:void(0);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon">
+                            <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Settings
+                    </a>
+
+                    <!-- Feedback Link -->
+                    <a id="link-feedback" onclick="showContent('feedback')" class="nav-links" href="javascript:void(0);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-share-icon">
+                            <path d="M12 3H4a2 2 0 0 0-2 2v16.286a.71.71 0 0 0 1.212.502l2.202-2.202A2 2 0 0 1 6.828 19H20a2 2 0 0 0 2-2v-4"/>
+                            <path d="M16 3h6v6"/>
+                            <path d="m16 9 6-6"/>
+                        </svg>
+                        Feedback
+                    </a>
+            </footer>
+
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA with a FOOTER -->
+        <div id="main-wrap" class="main-wrap">
+
+            <!-- List 1. FEED Section -->
+            <main id="feed" class="content-section active-content">
+                <div class="header_bar">
+                    <h3>Featured Goods</h3>
+                    <p>Discover top-quality, verified pre-owned items from trusted sellers.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                                <img src="Assets/Images/item_1.jpeg" alt="">
+                                <figcaption>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-plus-icon lucide-heart-plus">
+                                            <path d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"/>
+                                            <path d="M15 15h6"/><path d="M18 12v6"/>
+                                        </svg>
+                                    </button>
+                                </figcaption>
+                            <div class="card-info">
+                                <h4>Cotton Belt Watch</h4>
+                                <h6>Accessories</h6>
+                            </div>
+                            <button class="place">Mumbai, Maharashtra</button>
+                            <div class="card-btn">
+                                <button class="price-tag">$ 11,500</button>
+                                <div class="btn-grp">
+                                    <button class="view_details">
+                                        <p>View Details</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-out-up-right-icon lucide-circle-arrow-out-up-right"><path d="M22 12A10 10 0 1 1 12 2"/><path d="M22 2 12 12"/><path d="M16 2h6v6"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article>
+                                <img src="Assets/Images/item_2.jpeg" alt="">
+                                <figcaption>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-plus-icon lucide-heart-plus">
+                                            <path d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"/>
+                                            <path d="M15 15h6"/><path d="M18 12v6"/>
+                                        </svg>
+                                    </button>
+                                </figcaption>
+                            <div class="card-info">
+                                <h4>Digital Clock</h4>
+                                <h6>Home</h6>
+                            </div>
+                            <button class="place">Nagpur</button>
+                            <div class="card-btn">
+                                <button class="price-tag">$ 11.5</button>
+                                <div class="btn-grp">
+                                    <button class="view_details">
+                                        <p>View Details</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-out-up-right-icon lucide-circle-arrow-out-up-right"><path d="M22 12A10 10 0 1 1 12 2"/><path d="M22 2 12 12"/><path d="M16 2h6v6"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                                <img src="Assets/Images/item_3.jpeg" alt="">
+                                <figcaption>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-plus-icon lucide-heart-plus">
+                                            <path d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"/>
+                                            <path d="M15 15h6"/><path d="M18 12v6"/>
+                                        </svg>
+                                    </button>
+                                </figcaption>
+                            <div class="card-info">
+                                <h4>Cotton Belt Watch</h4>
+                                <h6>Accessories</h6>
+                            </div>
+                            <button class="place">Chh. Sambhaji Nagar</button>
+                            <div class="card-btn">
+                                <button class="price-tag">$ 11.5</button>
+                                <div class="btn-grp">
+                                    <button class="view_details">
+                                        <p>View Details</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-out-up-right-icon lucide-circle-arrow-out-up-right"><path d="M22 12A10 10 0 1 1 12 2"/><path d="M22 2 12 12"/><path d="M16 2h6v6"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>      
+                    </div>
+                </section>
+            </main>
+
+            <!-- List 2. CATEGORIES Section -->
+            <main id="categories" class="content-section">
+                <div class="header_bar">
+                    <h3>Browse Categories</h3>
+                    <p>Explore items by category to find exactly what you're looking for.</p>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <h4>Electronics</h4>
+                        <p>Phones, laptops, cameras, and more tech gadgets.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Furniture</h4>
+                        <p>Quality furniture for every room in your home.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Vehicles</h4>
+                        <p>Cars, motorcycles, bikes, and vehicle accessories.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Apparel & Accessories</h4>
+                        <p>Fashion items, clothing, watches, and jewelry.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Home & Garden</h4>
+                        <p>Tools, decor, and everything for your home.</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Sporting</h4>
+                        <p>Sports equipment, outdoor gear, and fitness items.</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- List 3. SELL Section -->
+            <main id="sell" class="content-section">
+                <div class="header_bar">
+                    <h3>List an Item (Sell)</h3>
+                    <p>Create a listing to sell your pre-owned items quickly and easily.</p>
+                </div>
+                <div class="sell-item-wrapper">
+                    <div class="listing item-left">
+                        <h3>Upload Product Images</h3>
+                        <p>Add 1–4 clear photos showing your product from different angles. JPG or PNG only, max 5MB each.</p>
+                        <button type="submit" id="upload-images">Upload Images</button>
+                    </div>
+                    <div class="listing item-right">
+                        <form class="sell-form">
+                            <div class="group itm-1">
+                                <label for="item-title">Item Title</label>
+                                <label for="item-category">Category</label>
+                                <input type="text" id="item-title" placeholder="Enter item name" required>
+                        
+                                <select id="item-category" required>
+                                    <option value="">Select a category</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="furniture">Furniture</option>
+                                    <option value="vehicles">Vehicles</option>
+                                    <option value="apparel">Apparel & Accessories</option>
+                                    <option value="home">Home & Garden</option>
+                                    <option value="sporting">Sporting</option>
+                                </select>
+                            </div>
+                            <div class="condition-grp">
+                                <label for="item-condition">Condition:</label>
+                                <ul>
+                                    <li class="tag-cnd cnd-1">Brand New</li>
+                                    <li class="tag-cnd cnd-2">Like New</li>
+                                    <li class="tag-cnd cnd-3">Mint Condition</li>
+                                    <li class="tag-cnd cnd-4">Gently Used</li>
+                                    <li class="tag-cnd cnd-5">Used</li>
+                                    <li class="tag-cnd cnd-6">For Parts</li>
+                                </ul>
+                            </div>
+                            <div class="group itm-2">
+                                <label for="item-price">Price (₹)</label>
+                                <label for="date-listed">Date:</label>
+                                <label for="location">Location:</label>
+                                <input type="number" id="item-price" placeholder="0.00" step="0.01" required>
+                                <input type="date" name="" id="date-listed">
+                                <input type="text" id="location" name="location" placeholder="Enter your location" />
+                            </div>
+
+                            <label for="item-description">Description</label>
+                            <textarea id="item-description" rows="5" placeholder="Describe your item..." required></textarea>
+                            <div class="group itm-3">
+                                <label for="seller-name">Name:</label>
+                                <label for="contact">Contact:</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                                <input type="tel" id="contact" name="contact" placeholder="Enter your phone or email" required />
+                            </div>
+                            <div class="btn-list">
+                                <button type="submit" class="list-btn">List Item</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <!-- List 4. INBOX Section -->
+            <main id="inbox" class="content-section">
+                <div class="header_bar">
+                    <h3>Inbox</h3>
+                    <p>View and manage your messages from buyers and sellers.</p>
+                </div>
+                <div class="inbox-list">
+                    <div class="message-item">
+                        <strong>John Doe</strong>
+                        <p>Hi, is the laptop still available?</p>
+                        <span class="message-time">2 hours ago</span>
+                    </div>
+                    <div class="message-item">
+                        <strong>Sarah Smith</strong>
+                        <p>Can you provide more photos of the furniture?</p>
+                        <span class="message-time">5 hours ago</span>
+                    </div>
+                    <div class="message-item">
+                        <strong>Mike Johnson</strong>
+                        <p>I'd like to purchase the watch. When can we meet?</p>
+                        <span class="message-time">1 day ago</span>
+                    </div>
+                </div>
+            </main>
+
+            <!-- List 5. WATCHLIST Section -->
+            <main id="watchlist" class="content-section">
+                <div class="header_bar">
+                    <h3>My Watchlist</h3>
+                    <p>Keep track of items you're interested in purchasing.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/item_2.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Digital Home Monitor</h4>
+                                <h6>Electronics</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 11.5</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- List 6. LOCAL Section -->
+            <main id="local" class="content-section">
+                <div class="header_bar">
+                    <h3>Local Listings</h3>
+                    <p>Browse items available near you for easy pickup.</p>
+                </div>
+                <div class="local-filter">
+                    <label for="distance">Within:</label>
+                    <select id="distance">
+                        <option value="5">5 miles</option>
+                        <option value="10">10 miles</option>
+                        <option value="25">25 miles</option>
+                        <option value="50">50 miles</option>
+                    </select>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/item_3.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"/>
+                                        <path d="M15 15h6"/><path d="M18 12v6"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Sunrise Clock</h4>
+                                <h6>Electronics</h6>
+                                <span class="location-badge">2.3 miles away</span>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 11.5</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+            
+
+            <!-- CATEGORIES -->
+            
+            <!-- ELECTRONICS Section -->
+            <main id="electronics" class="content-section">
+                <div class="header_bar">
+                    <h3>Electronics</h3>
+                    <p>Discover top-rated gadgets and smart devices on the marketplace.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/electronic_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Wireless Earbuds</h4>
+                                <h6>Electronics</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 29.9</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- FURNITURE Section -->
+            <main id="furniture" class="content-section">
+            <div class="header_bar">
+                <h3>Furniture</h3>
+                <p>Upgrade your living space with stylish and affordable furniture.</p>
+            </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/furniture_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Wooden Coffee Table</h4>
+                                <h6>Furniture</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 45.0</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- VEHICLES Section -->
+            <main id="vehicles" class="content-section">
+                <div class="header_bar">
+                    <h3>Vehicles</h3>
+                    <p>Find pre-owned bikes, cars, and scooters verified by trusted sellers.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/vehicle_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Used Sports Bike</h4>
+                                <h6>Vehicles</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 3200</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- APPAREL Section -->
+            <main id="apparel" class="content-section">
+                <div class="header_bar">
+                    <h3>Apparel & Accessories</h3>
+                    <p>Browse trendy clothing, shoes, and accessories for all styles.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/apparel_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Men’s Denim Jacket</h4>
+                                <h6>Apparel</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 38.0</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- HOME & GARDEN Section -->
+            <main id="home" class="content-section">
+                <div class="header_bar">
+                    <h3>Home & Garden</h3>
+                    <p>Shop quality home décor, lighting, and gardening tools for your space.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/home_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Indoor Plant Set</h4>
+                                <h6>Home & Garden</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 15.5</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- SPORTING Section -->
+            <main id="sporting" class="content-section">
+                <div class="header_bar">
+                    <h3>Sporting</h3>
+                    <p>Explore fitness gear, sports equipment, and outdoor adventure items.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/sporting_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Mountain Bike Helmet</h4>
+                                <h6>Sporting</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 28.5</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- COLLECTIBLES & ANTIQUES Section -->
+            <main id="collectibles" class="content-section">
+                <div class="header_bar">
+                    <h3>Collectibles & Antiques</h3>
+                    <p>Find timeless treasures, vintage décor, and rare collectible pieces.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/collectibles_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Vintage Gramophone</h4>
+                                <h6>Collectibles</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 150</div>
+                                <button class="svg-btn">View Item</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- DASHBOARD Section -->
+            <main id="dashboard" class="content-section">
+                <div class="header_bar">
+                    <h3>Dashboard</h3>
+                    <p>Overview of your activity, listings, and marketplace insights.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/dashboard_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Performance Overview</h4>
+                                <h6>Analytics Summary</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">View</div>
+                                <button class="svg-btn">Open Dashboard</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- ITEM LISTED Section -->
+            <main id="itemlisted" class="content-section">
+                <div class="header_bar">
+                    <h3>Items Listed</h3>
+                    <p>View and manage the items you’ve listed for sale on the marketplace.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/listed_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Smart Fitness Band</h4>
+                                <h6>Electronics</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">$ 22.0</div>
+                                <button class="svg-btn">Manage</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- ANALYTICS Section -->
+            <main id="analytics" class="content-section">
+                <div class="header_bar">
+                    <h3>Analytics</h3>
+                    <p>Track views, impressions, and engagement for your listed items.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/analytics_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Sales Graph Summary</h4>
+                                <h6>Performance</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">Stats</div>
+                                <button class="svg-btn">View Details</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- COMMUNITY Section -->
+            <main id="community" class="content-section">
+                <div class="header_bar">
+                    <h3>Community</h3>
+                    <p>Join the community, share tips, and connect with other sellers.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/Images/Item_4.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Marketplace Forum</h4>
+                                <h6>Discussion</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">Join</div>
+                                <button class="svg-btn">Open Forum</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- EARN Section -->
+            <main id="earn" class="content-section">
+                <div class="header_bar">
+                    <h3>Earn</h3>
+                    <p>Earn rewards and commissions through referrals and successful sales.</p>
+                </div>
+                <section class="featured-goods">
+                    <div class="items-grid">
+                        <article>
+                            <img src="Assets/images/earn_item.jpeg" alt="">
+                            <figcaption>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                    </svg>
+                                </button>
+                            </figcaption>
+                            <div class="card-info">
+                                <h4>Referral Program</h4>
+                                <h6>Incentives</h6>
+                            </div>
+                            <div class="card-btn">
+                                <div class="price-tag">Earn Now</div>
+                                <button class="svg-btn">Start Earning</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+
+            <!-- SETTINGS Section -->
+            <main id="settings" class="content-section">
+                <div class="header_bar">
+                    <h3>Settings</h3>
+                    <p>Manage your account, notifications, privacy, and marketplace preferences.</p>
+                </div>
+
+                <!-- Account Section -->
+                <section class="settings-section">
+                    <h4>Account</h4>
+                    <label>
+                        Username:
+                        <input type="text" value="JohnDoe" placeholder="Enter your username">
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" value="johndoe@example.com">
+                    </label>
+                    <label>
+                        Profile Visibility:
+                        <select>
+                            <option value="public" selected>Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </label>
+                </section>
+
+                <!-- Notifications Section -->
+                <section class="settings-section">
+                    <h4>Notifications</h4>
+                    <label>
+                        <input type="checkbox" checked>
+                        Email notifications
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Promotional emails
+                    </label>
+                    <label>
+                        <input type="checkbox" checked>
+                        SMS alerts
+                    </label>
+                </section>
+
+                <!-- Privacy & Security Section -->
+                <section class="settings-section">
+                    <h4>Privacy & Security</h4>
+                    <label>
+                        Change Password:
+                        <input type="password" placeholder="New Password">
+                    </label>
+                    <label>
+                        Two-Factor Authentication:
+                        <input type="checkbox" checked>
+                    </label>
+                </section>
+
+                <!-- Selling Preferences -->
+                <section class="settings-section">
+                    <h4>Selling Preferences</h4>
+                    <label>
+                        Default Shipping Method:
+                        <select>
+                            <option>Standard</option>
+                            <option>Express</option>
+                        </select>
+                    </label>
+                    <label>
+                        Default Payment Method:
+                        <select>
+                            <option>PayPal</option>
+                            <option>Credit Card</option>
+                            <option>UPI</option>
+                        </select>
+                    </label>
+                </section>
+
+                <!-- Marketplace Options -->
+                <section class="settings-section">
+                    <h4>Marketplace Options</h4>
+                    <label>
+                        UI Theme:
+                        <select>
+                            <option selected>Light Mode</option>
+                            <option>Dark Mode</option>
+                        </select>
+                    </label>
+                    <label>
+                        Language:
+                        <select>
+                            <option selected>English</option>
+                            <option>Hindi</option>
+                            <option>Other</option>
+                        </select>
+                    </label>
+                </section>
+
+                <button class="save-btn">Save Changes</button>
+            </main>
+
+            <!-- FEEDBACK Section -->
+            <main id="feedback" class="content-section">
+                <div class="header_bar">
+                    <h3>Feedback</h3>
+                    <p>We value your input! Share your thoughts, suggestions, or report any issues below.</p>
+                </div>        
+                <form class="feedback-form">
+                    <label>
+                        Name:
+                        <input type="text" placeholder="Your Name" required>
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" placeholder="Your Email" required>
+                    </label>
+                    <label>
+                        Type of Feedback:
+                        <select required>
+                            <option value="">Select</option>
+                            <option>Bug Report</option>
+                            <option>Feature Request</option>
+                            <option>General Feedback</option>
+                        </select>
+                    </label>
+                    <label>
+                        Message:
+                        <textarea placeholder="Write your feedback here..." rows="5" required></textarea>
+                    </label>
+                    <button type="submit" class="save-btn">Submit Feedback</button>
+                </form>
+            </main>
+            <!-- === end of main === -->
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='Pages/JS/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='Pages/JS/api.js') }}"></script>
+</body>
+</html>
