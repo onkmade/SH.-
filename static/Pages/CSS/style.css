@@ -911,3 +911,25 @@ textarea:focus {
     border-radius: 0.25rem;
     margin-bottom: 1rem;
 }
+
+#settings{
+    display: grid;
+}
+
+.setting-ul{
+    display: flex;
+    background: none;
+    gap: 2rem;
+    border: 1px solid #b4d1ef;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.setting_links{
+    color: #75899d;
+    cursor: pointer;
+}
+
+.setting_links:hover{
+    color: #1f2937;
+}
