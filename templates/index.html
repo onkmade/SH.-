@@ -255,6 +255,18 @@
                         </article>      
                     </div>
                 </section>
+                
+                <!-- 2. Detail View (Initially hidden) -->
+                <section id="detail-view" style="display: none;">
+                    <button onclick="showFeedView()" class="detail-back-button">
+                        <!-- Back Arrow SVG Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="m15 18-6-6 6-6"/></svg>
+                        Back to Feed
+                    </button>
+                    <div id="detail-content" class="detail-view-container">
+                        <!-- Selected product details inserted here -->
+                    </div>
+                </section>
             </main>
 
             <!-- List 2. CATEGORIES Section -->
@@ -930,6 +942,52 @@
                         Email:
                         <input type="email" placeholder="Your Email" required>
                     </label>
+                    <label>
+                        Type of Feedback:
+                        <select required>
+                            <option value="">Select</option>
+                            <option>Bug Report</option>
+                            <option>Feature Request</option>
+                            <option>General Feedback</option>
+                        </select>
+                    </label>
+                    <label>
+                        Message:
+                        <textarea placeholder="Write your feedback here..." rows="5" required></textarea>
+                    </label>
+                    <button type="submit" class="save-btn">Submit Feedback</button>
+                </form>
+            </main>
+            <!-- === end of main === -->
+        </div>
+    </div>
+    <script src="/static/Pages/JS/app.js"></script>
+    <script src="/static/Pages/JS/api.js"></script>
+</body>
+</html>         </label>
+                    <label>
+                        Type of Feedback:
+                        <select required>
+                            <option value="">Select</option>
+                            <option>Bug Report</option>
+                            <option>Feature Request</option>
+                            <option>General Feedback</option>
+                        </select>
+                    </label>
+                    <label>
+                        Message:
+                        <textarea placeholder="Write your feedback here..." rows="5" required></textarea>
+                    </label>
+                    <button type="submit" class="save-btn">Submit Feedback</button>
+                </form>
+            </main>
+            <!-- === end of main === -->
+        </div>
+    </div>
+    <script src="/static/Pages/JS/app.js"></script>
+    <script src="/static/Pages/JS/api.js"></script>
+</body>
+</html>         </label>
                     <label>
                         Type of Feedback:
                         <select required>
