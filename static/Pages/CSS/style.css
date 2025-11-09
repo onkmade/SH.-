@@ -349,9 +349,6 @@ main img{
     transition: all 0.2s ease-in-out;
 }
 
-main img:hover{
-    transform: scale(1.015);
-}
 
 .items-grid{
     display: grid;

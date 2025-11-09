@@ -7,6 +7,7 @@
     <!-- Updated style files -->
     <!--<link rel="stylesheet" href="Pages/CSS/style.css">
     <link rel="stylesheet" href="Pages/CSS/list_item.css"> -->
+    <link rel="stylesheet" href="/static/Pages/CSS/detailview.css">
     <link rel="stylesheet" href="/static/Pages/CSS/style.css">
     <link rel="stylesheet" href="/static/Pages/CSS/list_item.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -256,23 +257,21 @@
                     </div>
                 </section>
                 
-                <!-- 2. Detail View (Initially hidden) -->
-                <section id="detail-view">
+                <!-- 2. Detail View (Initially hidden) / FIND detailview.css if any change needed -->
+                <section id="detail-view" class="details-view">
                     <button onclick="showFeedView()" class="detail-back-button">
                         <!-- Back Arrow SVG Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="m15 18-6-6 6-6"/></svg>
                         Back to Feed
                     </button>
                     <div id="detail-content" class="detail-view-container">
-                        <div class="categories-detail">
-                            Electronics
-                        </div>
                         <div class="img-detail">
                             <!-- Uploaded image goes here -->
+                            <h5 class="categories-detail">Electronics</h5>
                             <img src="/Assets/Images/placeholder.jpeg" alt="">
                         </div>
                         <div class="details-holder">
-                            <h4 class="title-name detail">Zenbook pro 1 Duo</h4>
+                            <h1 class="title-name detail">Zenbook pro 1 Duo</h1>
                             <div class="status-detail">
                                 <div class="condition-tag">Like new</div>
                                 <div class="current-option">Available</div>
@@ -289,7 +288,12 @@
                         </div>
                         <div class="qr-holder">
                             <!-- generated QR goes here -->
-
+                            <img src="" alt="" class="qr-img">
+                            <div class="person-detail-page">
+                                <div class="name-detail">OREWA ZROR</div>
+                                <div class="detail-email">zoro@gmail.com</div>
+                                <div class="detail-phoneno">858565856</div>
+                            </div>
                         </div>
                     </div>
                 </section>
